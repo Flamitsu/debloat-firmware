@@ -35,7 +35,7 @@ Benefits:
 
 ## 3. How can you use this script?
 
-> This script needs root privileges because it modifies Portage configuration.
+This script needs root privileges because it modifies Portage configuration.
 clang // gcc main.c -o main
 doas // sudo ./main
 ## 4. Current state
