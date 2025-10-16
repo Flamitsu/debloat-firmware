@@ -5,6 +5,7 @@ This is a script made for gentoo to debloat linux firmware package to the minima
 1. What does this project do?
 2. Why is this project useful?
 3. How can you use this script?
+4. Current state
 
 ---
 
@@ -12,7 +13,7 @@ This is a script made for gentoo to debloat linux firmware package to the minima
 
 This project provides an automated script to debloat your linux-firmware package on Gentoo.
 
-By default, linux-firmware can consume up to ~1.6GiB, including hundreds of firmware files you don't actually need.  
+By default, linux-firmware can consume up to ~1.6GiB, including hundreds of firmware files you don't actually need.
 This script extracts only the firmware files that your system actively loads during boot, based on dmesg logs.
 
 It also enables the savedconfig USE flag for linux-firmware automatically, so Portage will respect your minimal configuration.
@@ -30,14 +31,13 @@ Benefits:
 - Less CPU usage when decompressing/installing large firmware archives
 - Cleaner and more transparent system state
 
-Perfect for minimalists, performance enthusiasts, or embedded Gentoo users.
-
 ---
 
 ## 3. How can you use this script?
 
 > This script needs root privileges because it modifies Portage configuration.
-
-1. Make the script executable:
-	chmod +x $PATH-TO-FILE
-	bash $PATH-TO-FILE
+clang // gcc main.c -o main
+doas // sudo ./main
+## 4. Current state
+Already rewritted the script in C.
+Waiting it to be merged into a useflag with emerge in the linux-firmware package.
