@@ -42,3 +42,5 @@ Benefits:
 ## 4. Current state
 Already rewritted the script in C.
 Waiting it to be merged into a useflag with emerge in the linux-firmware package.
+Currently SystemD is not supported.
+Planing to read the ring buffer so do not need to rely on log files.

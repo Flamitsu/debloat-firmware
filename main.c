@@ -1,10 +1,18 @@
 #include <stdio.h>
+//#include <stdlib.h>
 #include <string.h>
 int main(){
     // Open all the needed files
     FILE *openLog = fopen("/var/log/dmesg", "r+");
     FILE *openWriteFile = fopen("/etc/portage/savedconfig/sys-kernel/linux-firmware","w+");
-    if (!openLog || !openWriteFile){
+    // Handles if the target system is using SystemD.
+    // Currently work in progress. SystemD is not supported
+    // for now since it manages logs differently.
+   //if (!openLog){
+
+   //}
+
+    if (!openWriteFile){
         return 1;
     }
     // Define what dmesg string needs to search and the char per line addmited
