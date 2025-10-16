@@ -1,5 +1,4 @@
 #include <stdio.h>
-//#include <stdlib.h>
 #include <string.h>
 int main(){
     // Open all the needed files
