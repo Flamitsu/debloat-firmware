@@ -2,18 +2,13 @@
 #include <string.h>
 int main(){
     // Open all the needed files
-    FILE *openLog = fopen("/var/log/dmesg", "r+");
-    FILE *openWriteFile = fopen("/etc/portage/savedconfig/sys-kernel/linux-firmware","w+");
-    // Handles if the target system is using SystemD.
-    // Currently work in progress. SystemD is not supported
-    // for now since it manages logs differently.
-   //if (!openLog){
-
-   //}
-
-    if (!openWriteFile){
-        return 1;
-    }
+    // This will read the ring kernel buffer but the problem is that it gets blocked.
+    // Working on fixing it soon
+    FILE *openLog = fopen("/dev/kmsg", "r+");
+    FILE *openWriteFile = fopen("linux-firmware","w+");
+   if (!openWriteFile | !openLog){
+       return 1;
+   }
     // Define what dmesg string needs to search and the char per line addmited
 
     const char *searchingString = "Loading firmware: ";
