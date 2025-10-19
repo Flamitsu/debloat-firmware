@@ -2,8 +2,8 @@
 #include <string.h>
 int main(){
     // Open all the needed files
-    // This will read the ring kernel buffer but the problem is that it gets blocked.
-    // Working on fixing it soon
+    // Opening the /dev/kmsg file should be the last option
+    // if i dont find any log file to rely on and the linux-firmware is empty
     FILE *openLog = fopen("/dev/kmsg", "r+");
     FILE *openWriteFile = fopen("linux-firmware","w+");
    if (!openWriteFile | !openLog){

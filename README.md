@@ -40,6 +40,12 @@ Benefits:
 - doas // sudo ./main
 
 ## 4. Current state
+
 Already rewritted the script in C.
+
 Waiting it to be merged into a useflag with emerge in the linux-firmware package.
-- The kernel ring buffer can be read already, i dont need to rely on log files.
+
+The kernel ring buffer can be read already, i dont need to rely on log files.
+However, the kernel ring buffer is volatile, so i need to rely again on log files.
+Like for example the kind of log sysklogd generates to save the logs
+###### God kill me
