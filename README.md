@@ -15,7 +15,7 @@ This project provides an automated script to debloat your linux-firmware package
 
 By default, linux-firmware can consume up to ~1.6GiB, including hundreds of firmware files you don't actually need.
 This script extracts only the firmware files that your system actively loads during boot, based on dmesg logs.
-
+Proof of how it works: https://www.youtube.com/watch?v=N_J7fijXpo8
 ---
 
 ## 2. Why is this project useful?
