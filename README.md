@@ -13,7 +13,7 @@ This is a script made for gentoo to debloat linux firmware package to the minima
 
 This project provides an automated script to debloat your linux-firmware package on Gentoo.
 
-By default, linux-firmware can consume up to ~1.6GiB, including hundreds of firmware files you don't actually need.
+By default, linux-firmware can consume up to ~1.9GiB, including hundreds of firmware files you don't actually need.
 This script extracts only the firmware files that your system actively loads during boot, based on dmesg logs.
 
 Proof of how it works: https://www.youtube.com/watch?v=N_J7fijXpo8
@@ -28,7 +28,7 @@ Benefits:
 
 - Faster downloads when updating linux-firmware
 - Less disk space used (especially on small SSDs or embedded systems)
-- Less CPU usage when decompressing/installing large firmware archives
+- Less CPU usage when decompressing/installing linux-firmware package
 
 ---
 
