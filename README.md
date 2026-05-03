@@ -16,8 +16,6 @@ This project provides an automated script to debloat your linux-firmware package
 By default, linux-firmware can consume up to ~1.6GiB, including hundreds of firmware files you don't actually need.
 This script extracts only the firmware files that your system actively loads during boot, based on dmesg logs.
 
-It also enables the savedconfig USE flag for linux-firmware automatically, so Portage will respect your minimal configuration.
-
 ---
 
 ## 2. Why is this project useful?
@@ -29,23 +27,16 @@ Benefits:
 - Faster downloads when updating linux-firmware
 - Less disk space used (especially on small SSDs or embedded systems)
 - Less CPU usage when decompressing/installing large firmware archives
-- Cleaner and more transparent system state
 
 ---
 
 ## 3. How can you use this script?
 
 - This script needs root privileges because it modifies Portage configuration.
-- gcc // clang main.c -o main .
-- doas // sudo ./main
+```bash
+    clang -O3 main.c -o debloat-firmware-x86_64
+    sudo ./debloat-firmware-x86_64; doas ./debloat-firmware-x86_64
+```
 
 ## 4. Current state
-
-Already rewritted the script in C.
-
-Waiting it to be merged into a useflag with emerge in the linux-firmware package.
-
-The kernel ring buffer can be read already, i dont need to rely on log files.
-However, the kernel ring buffer is volatile, so i need to rely again on log files.
-Like for example the kind of log sysklogd generates to save the logs
-###### God kill me
+Now the script works as intended, trying to make a new flag in the "linux-firmware" package in Gentoo!
